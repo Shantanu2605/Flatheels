@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Tilt+Prism&family=Orbitron:wght@600&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Unbounded&family=Montserrat&family=Nosifer&family=Ubuntu&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  cursor: url(cursor.cur) auto;
+ 
+}
+html{
+  scroll-behavior: smooth;
+}
+header {
+  background: rgba(0, 0, 0, 0.4) url(https://images.pexels.com/photos/682933/pexels-photo-682933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  color: #fff;
+  background-attachment: fixed;
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-blend-mode: darken;
+}
+
+header h1 {
+  font-family: 'Orbitron';
+  margin: 0;
+  font-size: 18vh;
+  color: gold;
+  letter-spacing: 18px;
+  box-shadow: 0 0 10px;
+}
+#shopping-cart {
+  width: 110vh;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 10vh;
+  border-radius: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#cart-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#clear-cart {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 11px;
+  font-family: 'orbitron';
+}
+#clear-cart:hover{
+  background-color: rgb(65, 7, 7);
+  transition: 0.4s ease;
+}
+
+header .adda p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    margin: 48px;
+}
+
+header .adda .shop {
+  text-decoration: none;
+  padding: 20px;
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: 'Unbounded';
+}
+header .adda .shop:hover{
+  border-color: gold;
+  color: gold;
+  transition: 0.2s ease-in;
+}
+.carousel-wrapper {
+  height: 324px;
+  position: relative;
+  width: 100%;
+  display: block;
+  margin: 50px auto ;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('https://www.jiomart.com/images/cms/aw_rbslider/slides/1675958288_Valentines_Week_Offer_Laptops_Desktop.jpg');
+  background-size: cover;
+}
+.item-2 {
+  background: url('https://www.jiomart.com/images/cms/aw_rbslider/slides/1675865545_One_Plus_11_Pre_book_Banner_Desktop.jpg');
+  background-size: cover;
+}
+.item-3 {
+  background: url('https://www.jiomart.com/images/cms/aw_rbslider/slides/1675699892_desktopgadgetgiftinggala.jpg');
+  background-size: cover;
+}
+
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+} 
+.mainft.white{
+  background: linear-gradient(45deg, purple, black, red);
+  background-size: cover;
+}
+.mainft.white h3{
+  color: #fff;
+}
+.mainft.white p{
+  color: white;
+}
+.addcart {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  list-style: none;
+  font-size: 17px;
+  border-radius: 20px;
+  padding: 9px;
+  background-color: #f70d19;
+  text-transform: uppercase;
+}
+
+.addcart::before{
+  content: '';
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 15px;
+  bottom: 7px;
+  border: 10px solid rgb(2, 200, 2);
+  border-width: 0 0 2px 2px;
+  transition: 0.2s ease;
+  opacity: 0;
+}
+.addcart::after{
+  content: '';
+  width: 35px;
+  height: 15px;
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  border: 6px solid green;
+  border-width: 2px 2px 0 0;
+  transition:0.3s ease;
+  opacity: 0;
+}
+.addcart:hover::before{
+  left: -5px;
+  bottom: -5px;
+  opacity: 1;
+  height: 25px;
+}
+.addcart:hover::after{
+  top: -4px;
+  right: -4px;
+  opacity: 1;
+}
+.addcart:hover{
+  background-color: green;
+  color: #fff;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.4) url(https://images.pexels.com/photos/682933/pexels-photo-682933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-blend-mode: darken;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  padding-bottom: 5px;
+  position: sticky;
+  top: 0;
+}
+nav li .home{
+  border-bottom: 2px solid;
+}
+nav li .homnone{
+  border-bottom: none;
+}
+nav a:focus{
+  border-bottom: 2px solid;
+}
+nav ul {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .right{
+  float: right;
+}
+nav .cart {
+  list-style: none;
+  padding: 10px;
+  background-color: rgb(244 0 143);
+  border-radius: 37px;
+}
+.reveal{
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+nav .cart:hover{
+  transition: 0.5s ease;
+  background-color: #710d71;
+  border-bottom: none;
+}
+nav .cart a:hover{
+  border-bottom: none;
+}
+nav li {
+  margin: 0 10px;
+}
+.dropdown-menu:hover .menu-content {
+  display: block;
+}
+.dropdown-menu:hover .menu-btn {
+  transition: 0.3s ease;
+  background-color: #3e8e41;
+  color: #fff;
+}
+.menu-btn {
+  cursor: pointer;
+  padding: 12px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+}
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+}
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: #017575;
+  min-width: 160px;
+  z-index: 1;
+}
+.links,.links-hidden{
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Kanit';
+}
+
+.links-hidden{
+  display: block;
+}
+.links-hidden:hover{
+  color: gold;
+  border-bottom: none;
+}
+.links{
+  display: inline-block;
+}
+nav.nav-scroll{
+  transition: 2.5s ease;
+ background-color: #000;
+}
+.heading {
+  font-size: 39px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-weight: lighter;
+  background: linear-gradient(24deg, #710d71, red, black);
+  text-align: center;
+}
+.price{
+  color: green;
+  font-family: 'Orbitron'; 
+  text-decoration: underline;
+}
+nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  list-style: none;
+  font-size: 17px;
+  padding: 8px;
+  text-transform: uppercase;
+}
+nav a:hover{
+  border-bottom: 2px solid;
+}
+nav form a img{
+  height: 5vh;
+}
+nav form .srch{
+  resize: none;
+  padding: 12px;
+  border-radius: 22px;
+}
+nav form .search:hover{
+  border-bottom: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 0;
+}
+.mainft white{
+  background-color: white;
+}
+main h2 {
+  margin: 0 0 20px 0;
+}
+main ul{
+  display: flex;
+}
+.ft{
+  display: flex;
+}
+.ft img{
+  height: 50vh;
+}
+.content{
+  align-items: center;
+  justify-content: center;
+}
+.content p{
+  text-align: center;
+  font-size: 20px;
+  max-width: 500px;
+  color: #fff;
+  font-family: 'Raleway';
+}
+.buy {
+  margin-left: 14vh;
+  background-color: #f60;
+  color: #fff;
+  font-size: 25px;
+  font-family: 'Poiret One', cursive;
+  text-transform: uppercase;
+  border: #f60;
+  border-radius: 15px;
+  padding: 11px;
+}
+.buy:hover{
+  background-color: #333;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.mainft h3{
+  font-family: 'Ubuntu';
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+}
+.mainft{
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, purple, black, red, rgb(232, 209, 75));
+  display: flex;
+}
+main li {
+  display: grid;
+  align-items: center;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 6px 25px 20px 0;
+  padding: 20px;
+  width: 30%;
+}
+
+main img{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.off {
+  background-color: #f60;
+  color: #fff;
+  font-family: 'ubuntu';
+  text-align: center;
+  padding: 8px;
+  display: block;
+  margin: -21px;
+  margin-top: -65px;
+  font-size: 25px;
+}
+.lastheading {
+    font-size: 38px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-weight: lighter;
+    background: linear-gradient(24deg, #710d71, red, black);
+    text-align: center;
+}
+main h3 {
+  margin: 20px 0 10px 0;
+  font-family: 'Kanit';
+  text-shadow: 1px 1px brown;
+}
+
+main p {
+  font-weight: bold;
+  margin: 0;
+}
+.gta4{
+  margin-bottom: -30px;
+}
+label {
+  background-color: #f60;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+  padding: 8px;
+  display: block;
+  margin: -21px;
+  margin-top: -40px;
+}
+
+
+main button {
+  background-color: #333;
+  border: none;
+  position: relative;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  margin: 2px;
+}
+
+main button:hover {
+  background-color: black;
+  transition: 0.5s ease;
+}
+
+footer {
+  background: linear-gradient(45deg, black, grey);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+container{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100vh;
+}
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5) url('https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-blend-mode: darken;
+}
+.submit {
+  padding: 11px;
+  background-color: purple;
+  color: #fff;
+  font-size: 21px;
+  text-transform: uppercase;
+  font-family: 'Orbitron';
+  margin-top: 5px;
+  margin-left: 23vh;
+  border-color: purple;
+}
+.submit:hover{
+  cursor: pointer;
+  background-color: rgb(87, 3, 87);
+  transition: 0.5s ease;
+}
+.newsletter .material{
+  padding: 60px;
+  margin: 2vh;
+}
+.newsletter .material h1 {
+  font-family: 'Ubuntu';
+  font-size: 59px;
+  color: #fff;
+  font-weight: 600;
+}
+.newsletter .material p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: lightgrey;
+}
+textarea{
+  resize: none;
+  overflow: hidden;
+  border-color: grey;
+  padding: 20px;
+}
+textarea:focus { 
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px 4px #719ECE;
+}
+textarea::placeholder{
+  font-family: 'Ubuntu';
+  font-size: 15px;
+}
+.sponsor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sponsor img{
+  height: 18vh;
+  margin: 17px;
+}
+
+.product{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh;
+  box-shadow: 0 0 5px;
+}
+.product #product-image {
+  margin: 5vh;
+    height: 50vh;
+    padding: 17px;
+   border: 2px solid lightgray;
+   border-radius: 20px;
+   box-shadow: 0 0 5px royalblue;
+
+}
+.product #product-price {
+  color: green;
+  font-family: 'Orbitron';
+  font-size: 20px;
+}
+.product .detail {
+  background: lightgray;
+  margin: 10vh;
+  padding: 14px;
+  border-radius: 20px;
+}
+.product #product-name{
+  font-size: 20px;
+  font-family: 'Ubuntu';
+}
+.product .detail h3{
+  font-size: 25px;
+  font-weight: 600;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.product .detail p{
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#title{
+    background: none;
+    font-size: 25px;
+    border-right: 2px solid;
+    margin: 0;
+    margin-top: 0;
+    font-family: Tilt Prism;
+}
+.product #special{
+  padding: 6px;
+  font-weight: 400;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.product .buy {
+  padding: 10px;
+  background-color: green;
+  color: #fff;
+  font-family: 'Orbitron';
+  cursor: pointer;
+}
+.product .buy:hover{
+  background-color: #0a5302;
+}
+#quanform {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+#quanform #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+    background: black;
+    color: #fff;
+    font-size: 20px;
+}
+
+#quanform #increase {
+  margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+    background: black;
+    color: #fff;
+    font-size: 20px;
+}
+
+#quanform #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#cart-h{
+  font-family: 'Ubuntu';
+}
+table {
+  width: 100%;
+}
+
+th,  td {
+  border: 1px solid #551919;
+  padding: 10px;
+}
+
+th {
+  color: #fff;
+  background-color: #13705c;
+  border: 2px solid grey;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+}
+
+table img {
+  height: 226px;
+  width: 100%;
+}
+#cart-container p {
+  font-family: 'Poiret One';
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+}
+table h3{
+  font-family: 'Kanit';
+}
+#checkout {
+  font-size: 14px;
+  background-color: dimgray;
+  padding: 11px 16px;
+  font-family: 'orbitron';
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: dimgray;
+  margin: 20px;
+}
+#checkout:hover{
+  background-color: rgb(25, 50, 39);
+  transition: 0.4s ease;
+}
+.red{
+  background-color: red;
+}
+footer p{
+  font-family: 'orbitron';
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FLATHEELS- Gaming Store</title>
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <nav id="navbar">
+    <ul id="menu">
+      <li><a id="home" href="#">Home</a></li>
+      <div class="dropdown-menu">
+        <button class="menu-btn">Products 	&darr;</button>
+        <div class="menu-content">
+        <a class="links-hidden" href="#">Smartphones</a>
+        <a class="links-hidden" href="#">Gaming devices</a>
+        <a class="links-hidden" href="#">Best games to buy</a>
+        <a class="links-hidden" href="#">Consoles</a>
+        <a class="links-hidden" href="#">Headphones</a>
+        <a class="links-hidden" href="#">PC Accessories</a>
+        <a class="links-hidden" href="#">T-Shirts</a>
+    
+        </div>
+        </div>
+      <li><a onclick="removeClass()" href="#">Best Sellers</a></li>
+      <li><a onclick="removeClass()" href="#">Today's Deals</a></li>
+      <li><a onclick="removeClass()" href="tshirt.html">T-Shirts</a></li>
+    </ul>
+    <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Get in Touch</a></li>
+    <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Log In</a></li>
+    <form>
+      <textarea spellcheck="true" class="srch" cols="20" rows="1" placeholder="Search"></textarea>
+      <a class="search" href="#"><img src="https://www.citypng.com/public/uploads/small/116400840186bmo0mkghcdq8hn99wmpbh9wrgbytghidisi7e41vegbclccrb6kg9hrk0ebgqrpc5ezz2tjtkvsfsvk7yfbakowxbpvrzsakde3.png"></a>
+    </form>
+    <li class="cart"><a class="mycart" href="cart.html"> My Cart <i class="fa-solid fa-bag-shopping"></i> </a></li>
+    
+  </nav>
+  <header class="header1">
+    <div class="adda"><h1>FLATHEELS</h1>
+       <p>Largest Gaming Store with more than 1.5M products!</p>
+       <a href="#products" role="button" class="shop">Start Shopping 	&darr;</a>
+           </div>
+ 
+  </header>
+
+  <h3 class="heading" id="products">Featured Products</h3>
+  <main class="reveal">
+    <ul>
+      <li>
+       <img id="image" class="image" src="https://m.media-amazon.com/images/I/81kAitW5qAL._SL1500_.jpg" alt="Product 1">
+        <h3 id="name" class="name">GTA V (PS5) Standard Edtion</h3>
+        <p id="price" class="price">$24.22</p>
+        <button onclick="OpenProduct()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$30.22" data-item-id="123" data-item-name="GTA V (PS5) Standard Edition" data-item-img="https://m.media-amazon.com/images/I/81kAitW5qAL._SL1500_.jpg">Add to Cart </button>
+      </li>
+ 
+      <li>
+        <img id="4image" src="https://m.media-amazon.com/images/I/81rSkcE4IYL._SL1500_.jpg" alt="Product 2">
+        <h3 id="4name">GTA IV (PS3) with Windows Campatiblility</h3>
+        <p id="4price" class="price">$24.22</p>
+        <button onclick="gta4()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$24.12" data-item-id="125" data-item-name="GTA IV (PS3) with Windows Campatibility" data-item-img="https://m.media-amazon.com/images/I/81rSkcE4IYL._SL1500_.jpg">Add to Cart </button>
+      </li>
+      
+      <li>
+        <img id="forzaimg" src="https://m.media-amazon.com/images/I/51i-AkDZ3iL.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="forzaname">Forza Horizon 4 (XBOX ONE)</h3>
+        <p id="forzaprice" class="price">$27.22</p>
+        <button onclick="forza()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$27.22" data-item-id="127" data-item-name="Forza Horizon 4 (XBOX ONE)" data-item-img="https://m.media-amazon.com/images/I/51i-AkDZ3iL.jpg">Add to Cart </button>
+ 
+      </li>
+      <li>
+        <img id="codimg" src="https://m.media-amazon.com/images/I/61TCTC0T3gS._SL1000_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="codname">Call of Duty Black Ops 4 (PS4)</h3>
+        <p id="codprice" class="price">$28.22</p>
+        <button onclick="cod()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$28.22" data-item-id="126" data-item-name="Call of Duty Black Ops 4 (PS4)" data-item-img="https://m.media-amazon.com/images/I/61TCTC0T3gS._SL1000_.jpg">Add to Cart </button>
+      </li>   
+    </ul></main>
+    <div class="carousel-wrapper reveal">
+      <span id="item-1"></span>
+      <span id="item-2"></span>
+      <span id="item-3"></span>
+      <span id="item-4"></span>
+      <div class="carousel-item item-1">
+        <a href="#item-3" class="arrow-prev arrow"></a>
+        <a href="#item-2" class="arrow-next arrow"></a>
+      </div>
+  
+      <div class="carousel-item item-2">
+        <a href="#item-1" class="arrow-prev arrow"></a>
+        <a href="#item-3" class="arrow-next arrow"></a>
+      </div>
+  
+      <div class="carousel-item item-3">
+        <a href="#item-2" class="arrow-prev arrow"></a>
+        <a href="#item-1" class="arrow-next arrow"></a>
+      </div>
+      <div class="carousel-item item-4">
+        <a href="#item-2" class="arrow-prev arrow"></a>
+        <a href="#item-1" class="arrow-next arrow"></a>
+      </div>
+  
+    </div>
+    <main class="reveal">
+   
+    <ul>
+      <li>
+        <img id="pcimg" src="https://vestadeal.com/wp-content/uploads/2021/12/615IjBros-L._SL1000_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="pcname">Intel I9 Gaming 11th Gen DDR4 RAM NVIDIA GRAPHICS</h3>
+        <p id="pcprice" class="price">$2,414</p>
+        <button onclick="pc()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$2,414" data-item-id="113" data-item-name="Intel I9 Gaming pc" data-item-img="https://vestadeal.com/wp-content/uploads/2021/12/615IjBros-L._SL1000_.jpg">Add to Cart </button>
+
+      </li>
+      <li>
+        <img id="ximg" src="https://m.media-amazon.com/images/I/61-jjE67uqL._SX522_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="xname">Exclusive XBox Series-X</h3>
+        <p id="xprice" class="price">$390.5</p>
+        <button onclick="xbox()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$390.5" data-item-id="113" data-item-name="Exclusive XBox Series-X" data-item-img="https://m.media-amazon.com/images/I/61-jjE67uqL._SX522_.jpg">Add to Cart </button>
+
+
+      </li>
+      <li>
+        <label>Best Seller</label>
+        <img id="chistimg" src="https://m.media-amazon.com/images/I/61fZdlLnmHL._SL1024_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="chistname">CHIST Gaming PC (Core i7 3770 processor/16 GB RAM/1 TB Hard Disk/256 GB NVME SSD</h3>
+        <p id="chistprice" class="price">$2400</p>
+        <button onclick="chist()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$2400" data-item-id="1233" data-item-name="CHIST Gaming PC" data-item-img="https://m.media-amazon.com/images/I/61fZdlLnmHL._SL1024_.jpg">Add to Cart </button>
+
+
+      </li>
+      <li>
+        <img id="himg" src="https://m.media-amazon.com/images/I/61CGHv6kmWL._SL1000_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="hname">Bengoo G9000 Wired Over the Ear Headphone with Mic </h3>
+        <p id="hprice" class="price">$50</p>
+        <button onclick="headphone()">Visit Page &#8599;</button>
+        <button class="addcart" id="add-to-cart" data-item-price="$50" data-item-id="173" data-item-name="Bengoo G9000 Wired Over the Ear Headphone with Mic" data-item-img="https://m.media-amazon.com/images/I/61CGHv6kmWL._SL1000_.jpg">Add to Cart </button>
+
+
+      </li>
+    </ul>
+  </main>
+<section class="mainft">
+  <div class="ft reveal">
+    <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$">
+  </div><div class="content reveal">
+    <h3>50% Off on PlayStation 5!</h3>
+    <p>Get more with 4K Gaming, speedy SSD and an immersive 3D audio!</p>
+    <button class="buy">SHOP NOW &#8594</button>
+  </div>
+</section>
+<h3 class="heading">Featured T-Shirts</h3>
+<main class="reveal">
+  <ul>
+    <li>
+      <img id="imgpoke" src="https://kidlovestoys.com/wp-content/uploads/2019/02/Summer-children-kids-Shorts-t-shirts-cotton-Pokemon-Go-boys-girlls-tops-tees-pikachu-t-shirts-3.jpg" alt="GTA V (PS5) Standard Edition">
+      <h3 id="namepoke">Pokemon Go Premium T-Shirt </h3>
+      <p id="pricepoke" class="price">$8</p>
+      <button onclick="pokemon()">Visit Page &#8599;</button>
+      <button class="addcart" id="add-to-cart" data-item-price="$8" data-item-id="113" data-item-name="Pokemon Go Premium T-Shirt" data-item-img="https://kidlovestoys.com/wp-content/uploads/2019/02/Summer-children-kids-Shorts-t-shirts-cotton-Pokemon-Go-boys-girlls-tops-tees-pikachu-t-shirts-3.jpg">Add to Cart </button>
+
+
+    </li>
+    <li>
+      <img id="imgim" src="https://m.media-amazon.com/images/I/71nAn0Gd6hL._AC_UX679_.jpg" alt="GTA V (PS5) Standard Edition">
+      <h3 id="nameim">Invincible Iron Man T-Shirt </h3>
+      <p id="priceim" class="price">$8</p>
+      <button onclick="iman()">Visit Page &#8599;</button>
+      <button class="addcart" id="add-to-cart" data-item-price="$8" data-item-id="183" data-item-name="Invincible Iron Man T-Shirt" data-item-img="https://m.media-amazon.com/images/I/71nAn0Gd6hL._AC_UX679_.jpg">Add to Cart </button>
+
+    </li>
+    <li>
+      <img id="imghulk" src="https://www.redwolf.in/image/cache/catalog/mens-t-shirts/i-am-always-angry-t-shirt-india-700x700.jpg" alt="GTA V (PS5) Standard Edition">
+      <h3 id="namehulk">Hulk (Royal Blue) </h3>
+      <p id="pricehulk" class="price">$8</p>
+      <button onclick="hulk()">Visit Page &#8599;</button>
+      <button class="addcart" id="add-to-cart" data-item-price="$8" data-item-id="1813" data-item-name="Hulk T-Shirt" data-item-img="https://www.redwolf.in/image/cache/catalog/mens-t-shirts/i-am-always-angry-t-shirt-india-700x700.jpg">Add to Cart </button>
+    </li>
+    <li>
+      <img id="imgcoder" src="https://www.xtees.com/uploads/products/images/primary/mt/mt-00545.JPG" alt="GTA V (PS5) Standard Edition">
+      <h3 id="namecoder">I can't keep calm, i am a gamer </h3>
+      <p id="pricecoder" class="price">$8</p>
+      <button onclick="coder()">Visit Page &#8599;</button>
+      <button class="addcart" id="add-to-cart" data-item-price="$8" data-item-id="18103" data-item-name="Coding T-Shirt" data-item-img="https://www.xtees.com/uploads/products/images/primary/mt/mt-00545.JPG">Add to Cart </button>
+
+
+    </li>
+    
+  </ul>
+</main>
+<section class="mainft white">
+  <div class="ft reveal">
+    <img src="https://cdn.shopify.com/s/files/1/1383/7761/products/Men_sCrewNeckT-ShirtGhosted-FullFront_533x.png?v=1590681633">
+  </div><div class="content reveal">
+    <h3>30% Discount on Custom T-Shirts</h3>
+    <p>Create your favourite design now!</p>
+    <button class="buy">SHOP NOW &#8594</button>
+  </div>
+ 
+</section>
+<h3 class="lastheading">Last Minute Deals!</h3>
+  <main class="reveal">
+    <ul>
+      <li>
+        <label class="off">70% OFF</label>
+        <img src="https://m.media-amazon.com/images/I/71RK6+rx-xL.jpg" alt="Product 1">
+        <h3>Asus ROG Strix G17 I9 Ultra Gaming</h3>
+        <p class="price">$24.22</p>
+        <button>Visit Page &#8599;</button>
+        <button class="addcart">Add to Cart</button>
+      </li>
+      <li>
+        <label class="off">90% OFF</label>
+        <img src="https://m.media-amazon.com/images/I/51U4bYFcqeL._SX679_.jpg" alt="Product 2">
+        <h3>Rs.2000 Sony PlayStation Network Wallet Top-Up</h3>
+        <p class="price">$24.22</p>
+        <button>Visit Page &#8599;</button>
+        <button class="addcart">Add to Cart</button>
+      </li>
+      <li>
+        <label class="off">80% OFF</label>
+        <img src="https://m.media-amazon.com/images/I/61m1QelRUeL._SX522_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3>
+          Noise ColorFit Pulse 2: 1.8" Biggest Display Smart Watch</h3>
+        <p class="price">$24.22</p>
+        <button>Visit Page &#8599;</button>
+        <button class="addcart">Add to Cart</button>
+      </li>
+      <li>
+        <label class="off">70% OFF</label>
+        <img src="https://m.media-amazon.com/images/I/413u56t+CiL._SY300_SX300_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3>OnePlus Nord CE 2 Lite 5G (Blue Tide, 6GB RAM, 128GB Storage)</h3>
+        <p class="price">$24.22</p>
+        <button>Visit Page &#8599;</button>
+        <button class="addcart">Add to Cart</button>
+      </li>
+      <li>
+        <label class="off">60% OFF</label>
+        <img src="https://m.media-amazon.com/images/I/714MfYgM9rL._SX679_.jpg" alt="GTA V (PS5) Standard Edition">
+        <h3 id="name">VW 80 cm (32 inches) Frameless Series HD Ready LED TV</h3>
+        <p id="price" class="price">$100</p>
+        <button>Visit Page &#8599;</button>
+        <button onclick="addToCart(item)" id="cart" class="addcart">Add to Cart</button>
+      </li>     
+    </ul>
+  </main>
+  <section class="newsletter">
+    <div class="emailsend reveal"><form><textarea id="email" cols="50" rows="1" placeholder="Enter your email"></textarea><br><button type="submit" class="submit">Submit</button></form></div>
+    <div class="material reveal"><h1>Subscribe Us!</h1>
+    <p>Get regular updates about latest offers and discounts.</p></div>
+  </section>
+  <h3 class="heading">Our Partners</h3>
+  <section class="sponsor reveal">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png">
+    <img src="https://static4.arrow.com/-/media/arrow/images/manufacturers/i/intel-logo-approved.jpg">
+    <img src="https://1000logos.net/wp-content/uploads/2021/05/Sony-logo.png">
+    <img src="https://zeevector.com/wp-content/uploads/Xbox-Logo-svg.svg">
+    <img src="https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png">
+  </section>
+  <footer>
+    <p>Copyright ©️ FLATHEELS 2023</p>
+  </footer>
+  <script>var cart = [];
+
+    function addToCart(itemId, itemName, itemPrice, itemImg) {
+        var item = {
+            id: itemId,
+            name: itemName,
+            price: itemPrice,
+            img: itemImg,
+            quantity: 1
+        };
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(itemName + " has been added to the cart");
+    }
+    
+    var buttons = document.getElementsByClassName("addcart");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function() {
+            var itemId = this.getAttribute("data-item-id");
+            var itemName = this.getAttribute("data-item-name");
+            var itemPrice = this.getAttribute("data-item-price");
+            var itemImg = this.getAttribute("data-item-img");
+            addToCart(itemId, itemName, itemPrice, itemImg);
+        };
+    }
+    
+
+// Function to update the cart total
+function updateCartTotal() {
+let total = 0;
+for (let i = 0; i < cart.items.length; i++) {
+total += cart.items.length;
+}
+// Update the cart total display on the page
+document.getElementById('cart-total').innerHTML = total;
+}
+
+
+  </script>
+  <script src="https://kit.fontawesome.com/7b70ca378b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/7b70ca378b.css" crossorigin="anonymous">
+</body>
+</html>

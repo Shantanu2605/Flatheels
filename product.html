@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="Name"></title>
+    <script src="script.js"></script>
+</head>
+<body style="background: url(https://i.pinimg.com/originals/1f/46/38/1f4638addc8c0c377a8e69901c953582.jpg);">
+    <link rel="stylesheet" href="style.css">
+    <nav style="background: #000;" id="navbar">
+      <ul id="menu">
+        <label for="title" id="title">FLATHEELS</label>
+        <li><a id="home" href="index.html">Home</a></li>
+        <div class="dropdown-menu">
+          <button class="menu-btn">Products 	&darr;</button>
+          <div class="menu-content">
+          <a class="links-hidden" href="#">Smartphones</a>
+          <a class="links-hidden" href="#">Gaming devices</a>
+          <a class="links-hidden" href="#">Best games to buy</a>
+          <a class="links-hidden" href="#">Consoles</a>
+          <a class="links-hidden" href="#">Headphones</a>
+          <a class="links-hidden" href="#">PC Accessories</a>
+          <a class="links-hidden" href="#">T-Shirts</a>
+          </div>
+          </div>
+        <li><a onclick="removeClass()" href="#">Best Sellers</a></li>
+        <li><a onclick="removeClass()" href="#">Today's Deals</a></li>
+        <li><a onclick="removeClass()" href="#">T-Shirts</a></li>
+      </ul>
+      <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Get in Touch</a></li>
+      <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Log In</a></li>
+      <form>
+        <textarea spellcheck="true" class="srch" cols="20" rows="1" placeholder="Search"></textarea>
+        <a class="search" href="#"><img src="https://www.citypng.com/public/uploads/small/116400840186bmo0mkghcdq8hn99wmpbh9wrgbytghidisi7e41vegbclccrb6kg9hrk0ebgqrpc5ezz2tjtkvsfsvk7yfbakowxbpvrzsakde3.png"></a>
+      </form>
+      <li class="cart"><a class="mycart" href="cart.html"> My Cart &#x1F6D2;<span id="cart-total"></span> </a></li>
+      
+    </nav>
+
+ <section class="product">
+        <img id="product-image" alt="Product Image">
+        <div class="detail">
+        <h3>Product Name: <span id="product-name"></span></h3>
+        <p><span id="star">&#9734; &#9734; &#9734; &#9734; &#9734;</span></p>
+        <p>Price:<span id="product-price"></span></p>
+        <p id="special"></p>
+        <form id="quanform">
+          <h3>Quantity</h3>
+          <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+          <input type="number" id="number" value="1" />
+          <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+        </form>
+        <button class="buy">Buy Now</button>
+        
+</div>
+
+</section>
+    
+</body>
+<script>
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var name = urlParams.get("name");
+  var price = urlParams.get("price");
+  var imageSrc = urlParams.get("imageSrc");
+  var special = urlParams.get("special");
+  var quantity= document.getElementById("number").value;
+    document.getElementById("product-name").innerText = name;
+    document.getElementById("product-price").innerText = price;
+    document.getElementById("product-image").src = imageSrc;
+    document.getElementById("special").innerText= special
+    document.getElementById("Name").innerText = name;
+    window.onload= function(){
+ var home= document.getElementById("home");
+ home.classList.remove("home");  } 
+</script>
+</html>

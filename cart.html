@@ -1,0 +1,91 @@
+<body style="background:  url(https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-size: cover;
+background-blend-mode: darken;">
+<script src="https://kit.fontawesome.com/7b70ca378b.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://kit.fontawesome.com/7b70ca378b.css" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<nav style="background: #000;" id="navbar">
+  <ul id="menu">
+    <label for="title" id="title">FLATHEELS</label>
+    <li><a id="home" href="index.html">Home</a></li>
+    <div class="dropdown-menu">
+      <button class="menu-btn">Products 	&darr;</button>
+      <div class="menu-content">
+      <a class="links-hidden" href="#">Smartphones</a>
+      <a class="links-hidden" href="#">Gaming devices</a>
+      <a class="links-hidden" href="#">Best games to buy</a>
+      <a class="links-hidden" href="#">Consoles</a>
+      <a class="links-hidden" href="#">Headphones</a>
+      <a class="links-hidden" href="#">PC Accessories</a>
+      <a class="links-hidden" href="#">T-Shirts</a>
+      </div>
+      </div>
+    <li><a onclick="removeClass()" href="#">Best Sellers</a></li>
+    <li><a onclick="removeClass()" href="#">Today's Deals</a></li>
+    <li><a onclick="removeClass()" href="#">T-Shirts</a></li>
+  </ul>
+  <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Get in Touch</a></li>
+  <li style="list-style: none;" class="right"><a onclick="removeClass()" href="#">Log In</a></li>
+  <form>
+    <textarea spellcheck="true" class="srch" cols="20" rows="1" placeholder="Search"></textarea>
+    <a class="search" href="#"><img src="https://www.citypng.com/public/uploads/small/116400840186bmo0mkghcdq8hn99wmpbh9wrgbytghidisi7e41vegbclccrb6kg9hrk0ebgqrpc5ezz2tjtkvsfsvk7yfbakowxbpvrzsakde3.png"></a>
+  </form>
+  <li class="cart"><a class="mycart" href="cart.html"> My Cart &#x1F6D2; </a></li>
+  
+</nav>
+ <h3 class="heading">Shopping Cart</h3>
+  <div id="shopping-cart">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody id="cart-container">
+      </tbody>
+    </table>
+    <button id="clear-cart">Clear Cart <i class="fa-regular fa-square-minus"></i></button>
+    <button id="checkout"> Checkout	&#x2197;</button>
+</div>
+<script>
+  var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+var cartContainer = document.getElementById("cart-container");
+for (var i = 0; i < cart.length; i++) {
+    var item = cart[i];
+    var itemContainer = document.createElement("tr");
+    itemContainer.innerHTML = `
+        <td><img src="${item.img}" alt="${item.name}"></td>
+        <td><h3>${item.name}</h3></td>
+        <td><p>${item.price}</p></td>
+        <td><p>${item.quantity}</p></td>
+    `;
+    cartContainer.appendChild(itemContainer);
+}
+
+
+//   var cart = [];
+
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    displayCart();
+}
+function displayCart(){
+  var cartTotal = document.getElementById("cart-total");
+  total += item.name * item.quantity;
+  cartTotal.innerHTML = "Total: $" + total.toFixed(2);
+}
+
+
+document.getElementById("clear-cart").onclick = function() {
+    cart = [];
+    displayCart();
+}
+
+</script>
+</body>
